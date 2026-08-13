@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TGA v4.0.9 Input Schema",
+  "type": "object",
+  "required": ["requested_mode","main_topic","language","site_type"],
+  "properties": {
+    "requested_mode": {"type":"string","enum":["quick_assessment","full_cocoon_design","cocoon_audit","latent_intent_research","hypothesis_led_design"]},
+    "main_topic": {"type":"string"},
+    "keywords": {"type":"array","items":{"type":"string"}},
+    "site_type": {"type":"string"},
+    "language": {"type":"string"},
+    "region": {"type":"string"},
+    "strategic_goal": {"type":"string"},
+    "vertical_profile": {"type":"string"},
+    "regulated_role": {"type":"string"},
+    "existing_site_context": {"type":"object"}
+  },
+  "additionalProperties": true
+}

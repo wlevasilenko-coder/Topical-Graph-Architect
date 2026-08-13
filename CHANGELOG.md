@@ -1,4 +1,4 @@
-# Changelog — TGA v4.0.8
+# Changelog — TGA
 
 ## v4.0.8 — 2026-08-13
 
@@ -8,4 +8,8 @@
 - Restored baseline profiles for regulated verticals and clarified latent-intent processing order.
 - Added guidance for strict JSON validators and migration options.
 
-(See SPECIFICATION.md for full history and module-level changes.)
+## v4.0.9 — 2026-08-13
+
+- English translation of the full specification (added SPECIFICATION-en.md) and editorial clarifications for LLM usage.
+- No changes to module logic or outputs — editorial changes only to improve clarity in international contexts.
+- Added English prompt templates and versioned schemas (tga-v4.0.9-input/output) to preserve backward compatibility.
