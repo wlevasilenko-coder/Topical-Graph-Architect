@@ -1,0 +1,12 @@
+{
+  "example": "full_cocoon_design",
+  "requested_mode": "full_cocoon_design",
+  "main_topic": "IT-ипотека",
+  "keywords": ["IT-ипотека","условия IT-ипотеки","документы для IT-ипотеки"],
+  "site_type": "media",
+  "language": "ru",
+  "region": "RU",
+  "vertical_profile": "ymyl_finance",
+  "regulated_role": "publisher",
+  "notes": "This is a structural example placeholder. Use SPECIFICATION.md for full output contract."
+}

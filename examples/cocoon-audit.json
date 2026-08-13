@@ -1,0 +1,12 @@
+{
+  "example": "cocoon_audit",
+  "requested_mode": "cocoon_audit",
+  "existing_site_context": {
+    "sitemap": [],
+    "crawl_data": [],
+    "gsc_data": [],
+    "existing_pages": [],
+    "menu_items": []
+  },
+  "notes": "Placeholder for audit example output. Replace with actual audit inputs."
+}
