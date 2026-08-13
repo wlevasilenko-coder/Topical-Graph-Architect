@@ -1,19 +1,30 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "TGA v4.0.9 Input Schema",
+  "title": "TGA v4.0.9 Input Schema (base)",
   "type": "object",
   "required": ["requested_mode","main_topic","language","site_type"],
   "properties": {
-    "requested_mode": {"type":"string","enum":["quick_assessment","full_cocoon_design","cocoon_audit","latent_intent_research","hypothesis_led_design"]},
+    "requested_mode": {
+      "type": "string",
+      "enum": ["quick_assessment","full_cocoon_design","cocoon_audit","latent_intent_research"]
+    },
     "main_topic": {"type":"string"},
     "keywords": {"type":"array","items":{"type":"string"}},
     "site_type": {"type":"string"},
     "language": {"type":"string"},
     "region": {"type":"string"},
-    "strategic_goal": {"type":"string"},
-    "vertical_profile": {"type":"string"},
-    "regulated_role": {"type":"string"},
-    "existing_site_context": {"type":"object"}
+    "strategic_goal": {"type":"string","enum":["semantic_silo","content_hub","topical_authority","commercial_cluster","support_cluster","mixed"]},
+    "vertical_profile": {"type":"string","enum":["none","ymyl_finance","ymyl_medical","ymyl_legal","gambling","other_regulated","custom_regulated"]},
+    "regulated_role": {"type":"string","enum":["operator","affiliate","publisher","reviewer","software_provider","platform","advisor","provider","unknown"]},
+    "output_format": {"type":"string","enum":["table","json","technical_spec","editorial_tasks","combined"]},
+    "existing_site_context": {"type":"object"},
+    "custom_vertical_requirements": {"type":"object"}
   },
+  "allOf": [
+    {
+      "if": { "properties": { "vertical_profile": { "const": "custom_regulated" } } },
+      "then": { "required": ["custom_vertical_requirements"] }
+    }
+  ],
   "additionalProperties": true
 }
