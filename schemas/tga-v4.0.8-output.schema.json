@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TGA v4.0.8 Output Schema",
+  "type": "object",
+  "properties": {
+    "skill_name": {"type":"string"},
+    "skill_version": {"type":"string"},
+    "schema_version": {"type":"string"},
+    "requested_mode": {"type":"string"},
+    "resolved_mode": {"type":"string"},
+    "input_summary": {"type":"object"},
+    "topic_boundary": {"type":"object"},
+    "entity_graph": {"type":"array"},
+    "provisional_query_groups": {"type":"array"},
+    "clusters": {"type":"array"},
+    "pages": {"type":"array"},
+    "ssot_registry": {"type":"array"},
+    "decision_ledger": {"type":"array"},
+    "release_readiness": {"type":"object"}
+  },
+  "additionalProperties": true
+}
