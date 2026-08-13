@@ -1,72 +1,51 @@
-# Topical Graph Architect (TGA) v4.0.8
+# Topical Graph Architect (TGA) v4.0.9
 
-> Спецификация скилла для проектирования, аудита и развития семантических коконов как графов сущностей, пользовательских задач и навигации.
+> Current stable version: v4.0.9
+>
+> - Russian specification: [SPECIFICATION.md](./SPECIFICATION.md)
+> - English specification: [SPECIFICATION-en.md](./SPECIFICATION-en.md)
+> - English copy (convenience name): [Topical-Graph-Architect-v-4-0-9.md](./Topical-Graph-Architect-v-4-0-9.md)
+> - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 
-**Topical Graph Architect** — это архитектурный framework для SEO-, контент- и product-команд. Он помогает проектировать не просто набор URL, а управляемую карту сущностей, пользовательских задач, доказательств и навигационных переходов.
+**Topical Graph Architect** — an architectural framework for SEO, content and product teams. It helps design not just a set of URLs, but a governed map of entities, user jobs, evidence and navigation flows.
 
 ```text
 entity-first + intent-first + graph-first + evidence-led + consistency-first
 ```
 
-## Зачем нужен TGA
+## Quick start
 
-Классический подход к семантическим коконам часто выглядит так:
+1. Read the canonical specification: Russian: `SPECIFICATION.md`, English: `SPECIFICATION-en.md`.
+2. Choose a mode: `quick_assessment`, `full_cocoon_design`, `cocoon_audit` or `latent_intent_research`.
+3. Copy a matching example from `examples/` and adapt it.
+4. Supply the example to your LLM or agent, together with the relevant system prompt from `spec/prompts/`.
+5. Review `assumptions`, `manual_review_items`, and `release_readiness` in the produced output.
 
-```text
-Pillar page
-→ Child pages
-→ Internal links
-```
+## Documentation
 
-TGA использует более полную модель:
+| Document | Description |
+| --- | --- |
+| [SPECIFICATION.md](./SPECIFICATION.md) | Canonical (Russian) TGA specification (v4.0.8 original) |
+| [SPECIFICATION-en.md](./SPECIFICATION-en.md) | English edition (v4.0.9, editorial translation) |
+| [Topical-Graph-Architect-v-4-0-9.md](./Topical-Graph-Architect-v-4-0-9.md) | Convenience filename copy of the English spec |
+| [examples/](./examples) | Example input payloads by mode |
+| [schemas/](./schemas) | Interoperability schemas (permissive base schemas; see `schemas/README.md`) |
+| [templates/](./templates) | Editorial and technical templates |
+| [tests/regression-suite.md](./tests/regression-suite.md) | Regression scenarios to validate behaviour |
+| [CHANGELOG.md](./CHANGELOG.md) | Version history |
 
-```text
-Семантический кокон =
-граф сущностей
-+ пользовательские задачи
-+ структурное дерево
-+ контекстные переходы
-+ evidence/trust/compliance слой
-+ SSoT изменяемых фактов
-+ контроль качества по роли страницы
-+ объяснимые архитектурные решения
-```
+## Notes about schemas
 
-Скилл полезен, когда нужно:
+Current schemas are intentionally permissive. They validate the top-level envelope and are suitable for interoperability with LLM-driven systems. They do not (yet) enforce every nested module contract (entity_resolution, detailed page schema, decision ledger etc.). See `schemas/README.md` for details and recommended next steps if you need strict validation.
 
-- спроектировать структуру раздела или сайта с нуля;
-- провести аудит существующего контентного кластера;
-- устранить каннибализацию страниц;
-- определить, где нужна новая страница, а где достаточно раздела;
-- построить внутреннюю перелинковку не по ключам, а по пользовательскому пути;
-- работать с YMYL- и regulated-нишами;
-- управлять меняющимися условиями: ставками, ценами, бонусами, лицензиями, лимитами и eligibility requirements;
-- подготовить техническое и редакционное ТЗ для команды.
+## License
 
-## Структура репозитория
+MIT — see [LICENSE](./LICENSE)
 
-Рекомендуемый вариант:
+## Contributing
 
-```text
-topical-graph-architect/
-├── README.md
-├── LICENSE
-├── SPECIFICATION.md
-├── CHANGELOG.md
-├── examples/
-│   ├── full-cocoon-design.json
-│   ├── cocoon-audit.json
-│   ├── latent-intent-research.json
-│   └── regulated-gambling-audit.json
-├── schemas/
-│   ├── tga-v4.0.8-output.schema.json
-│   ├── tga-v4.0.8-input.schema.json
-│   └── migrations/
-│       └── v4.0.7-to-v4.0.8.md
-├── templates/
-│   ├── editorial-brief.md
-│   ├── technical-spec.md
-│   └── audit-report.md
-└── tests/
-    └── regression-suite.md
-```
+Please open issues or PRs for editorial updates, schema improvements, or test additions. For release discipline, follow semantic versioning and update `CHANGELOG.md` when making behaviour changes.
+
+---
+
+(If you prefer to keep `v4.0.8` as the canonical release and treat the English edition as a translation-only artifact, tell me and I will adjust headings to `v4.0.8 (English translation)`).

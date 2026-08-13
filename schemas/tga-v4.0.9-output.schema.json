@@ -7,7 +7,7 @@
     "skill_version": {"type":"string"},
     "schema_version": {"type":"string"},
     "requested_mode": {"type":"string"},
-    "resolved_mode": {"type":"string"},
+    "resolved_mode": {"type":"string","enum":["quick_assessment","full_cocoon_design","hypothesis_led_design","cocoon_audit","latent_intent_research"]},
     "input_summary": {"type":"object"},
     "topic_boundary": {"type":"object"},
     "entity_graph": {"type":"array"},
